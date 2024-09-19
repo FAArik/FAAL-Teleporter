@@ -234,13 +234,13 @@ On Fuji Testnet, all staking parameters are the same as those on Mainnet except 
 
 To become a validator, ensure you have a P-Chain balance by visiting [https://test.core.app/stake/cross-chain-transfer/](https://test.core.app/stake/cross-chain-transfer/) and transferring at least 1 AVAX (after fees) to the P-Chain.
 
-![image.png](image.png)
+![image.png](./images/image.png)
 
 After that, visit [https://test.core.app/stake/validate/](https://test.core.app/stake/validate/) to complete the process.
 
-![image.png](image%201.png)
+![image.png](./images/image%201.png)
 
-![image.png](image%202.png)
+![image.png](./images/image%202.png)
 
 We have the NodeID, but we also need to provide the BLS public key and signature. To do this, open your console and run the following `curl` command:
 
@@ -266,15 +266,15 @@ curl -X POST --data '{
 
 ```
 
-![image.png](image%203.png)
+![image.png](./images/image%203.png)
 
-![image.png](image%204.png)
+![image.png](./images/image%204.png)
 
-![image.png](image%205.png)
+![image.png](./images/image%205.png)
 
-![image.png](image%206.png)
+![image.png](./images/image%206.png)
 
-![image.png](image%207.png)
+![image.png](./images/image%207.png)
 
 Now you are set up as a validator.
 
