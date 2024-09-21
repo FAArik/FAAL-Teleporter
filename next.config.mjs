@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    webpack: (config) => {
-        config.resolve.fallback = {fs: false, net: false, tls: false};
-        return config;
-    },
-};
+import withPWA from 'next-pwa';
 
-export default nextConfig;
+const isProd = () => process.env.NODE_ENV === 'production';
+
+const nextConfig = {};
+
+export default isProd() ? withPWA({
+    dest: 'public',
+}) : nextConfig;

@@ -191,8 +191,6 @@ export default function Home() {
     async function handleChange(e: any) {
         var inputId = e.target.id;
         var selected = e.target.value
-        console.log(inputId)
-        console.log(selected)
         if (inputId === "fromInput") {
             if (selected === "cChain") {
                 switchChain({chainId: 43113});
@@ -203,14 +201,14 @@ export default function Home() {
                     await window.ethereum.request({
                         method: 'wallet_addEthereumChain',
                         params: [{
-                            chainId: '9031',  // 0x2347 in hex, 9031 in decimal
+                            chainId: '0x2347',  // 0x2347 in hex, 9031 in decimal
                             chainName: 'FAAL',
                             nativeCurrency: {
                                 name: 'USD Coin',
                                 symbol: 'USDC',
                                 decimals: 18
                             },
-                            rpcUrls: ['http://178.233.192.26:9650/ext/bc/2wfeNARjnmpRyR5HAkbFoSXdkrkXhqvM8KoBQNFHt3V9h8iZpF/rpc'], /* Replace with actual RPC URL */
+                            rpcUrls: ['https://178.233.192.26:9650/ext/bc/2wfeNARjnmpRyR5HAkbFoSXdkrkXhqvM8KoBQNFHt3V9h8iZpF/rpc'], /* Replace with actual RPC URL */
                             blockExplorerUrls: ['https://testnet.snowtrace.io/']
                         }]
                     });
