@@ -16,7 +16,7 @@ export function getConfig() {
         ssr: true,
         transports: {
             [avalancheFuji.id]: http("https://api.avax-test.network/ext/bc/C/rpc"),
-            [Faal_L1.id]: http("https://frank-rapidly-kingfish.ngrok-free.app/ext/bc/2wfeNARjnmpRyR5HAkbFoSXdkrkXhqvM8KoBQNFHt3V9h8iZpF/rpc"),
+            [Faal_L1.id]: http("http://178.233.192.26:9650/ext/bc/2wfeNARjnmpRyR5HAkbFoSXdkrkXhqvM8KoBQNFHt3V9h8iZpF/rpc"),
         },
 
     })
@@ -27,13 +27,13 @@ export const Faal_L1: Chain = {
     name: "FAAL",
     nativeCurrency: {
         decimals: 18,
-        name: "USDC",
+        name: "USD Coin",
         symbol: "USDC",
     },
     rpcUrls: {
         default: {
             http: [
-                "https://frank-rapidly-kingfish.ngrok-free.app/ext/bc/2wfeNARjnmpRyR5HAkbFoSXdkrkXhqvM8KoBQNFHt3V9h8iZpF/rpc"]
+                "http://178.233.192.26:9650/ext/bc/2wfeNARjnmpRyR5HAkbFoSXdkrkXhqvM8KoBQNFHt3V9h8iZpF/rpc"]
         },
     },
     testnet: true,

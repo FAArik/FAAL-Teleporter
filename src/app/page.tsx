@@ -51,7 +51,8 @@ export default function Home() {
 
     useEffect(() => {
         switchChain({chainId: 43113});
-    },[]);
+    }, []);
+
     async function getChainBalance() {
         var balance;
         if (fromState == "cChain") {
@@ -209,7 +210,7 @@ export default function Home() {
                                 symbol: 'USDC',
                                 decimals: 18
                             },
-                            rpcUrls: ['https://frank-rapidly-kingfish.ngrok-free.app/ext/bc/2wfeNARjnmpRyR5HAkbFoSXdkrkXhqvM8KoBQNFHt3V9h8iZpF/rpc'], /* Replace with actual RPC URL */
+                            rpcUrls: ['http://178.233.192.26:9650/ext/bc/2wfeNARjnmpRyR5HAkbFoSXdkrkXhqvM8KoBQNFHt3V9h8iZpF/rpc'], /* Replace with actual RPC URL */
                             blockExplorerUrls: ['https://testnet.snowtrace.io/']
                         }]
                     });
