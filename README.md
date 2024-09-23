@@ -1,3 +1,5 @@
+also on [avalanche-starter-kit-guide](https://github.com/FAArik/avalanche-starter-kit/tree/main/src/x-build-an-avalanche-L1-for-payments-with-USDC)
+
 # Build an Avalanche L1 for Payments with USDC
 
 Welcome to this guide on building an Avalanche Layer 1 (L1) network for payments using USDC (USD Coin). In this tutorial, we’ll walk through how to leverage Avalanche’s high-speed, low-cost infrastructure to create a robust payment solution with the stability of USDC. Whether you’re developing a new payment platform or enhancing an existing one, this guide will provide you with the essential steps and insights needed to integrate USDC on Avalanche, ensuring efficient and scalable transactions.
