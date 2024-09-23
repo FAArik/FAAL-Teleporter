@@ -16,7 +16,7 @@ export function getConfig() {
         ssr: true,
         transports: {
             [avalancheFuji.id]: http("https://api.avax-test.network/ext/bc/C/rpc"),
-            [Faal_L1.id]: http("https://178.233.192.26:9650/ext/bc/2wfeNARjnmpRyR5HAkbFoSXdkrkXhqvM8KoBQNFHt3V9h8iZpF/rpc"),
+            [Faal_L1.id]: http(`${process.env.NEXT_PUBLIC_RPC_URL as string}/FAAL/rpc`),
         },
 
     })
@@ -33,8 +33,10 @@ export const Faal_L1: Chain = {
     rpcUrls: {
         default: {
             http: [
-                "https://178.233.192.26:9650/ext/bc/2wfeNARjnmpRyR5HAkbFoSXdkrkXhqvM8KoBQNFHt3V9h8iZpF/rpc"]
+                `${process.env.NEXT_RPC_URL as string}/FAAL/rpc`]
+
         },
+
     },
     testnet: true,
 };

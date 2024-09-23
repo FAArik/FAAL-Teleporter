@@ -30,6 +30,7 @@ export default function Home() {
     const [toState, setToState] = useState("FAAL");
     const [amount, setAmount] = useState(0);
     const [toAddress, setToAddress] = useState("");
+    const [isSwitching, setIsSwitching] = useState(false);
     var [balance, setBalance] = useState("0");
 
     //#region token initialization
@@ -68,6 +69,7 @@ export default function Home() {
     useEffect(() => {
         if (address != undefined) {
             getChainBalance();
+            setIsSwitching(false);
         }
     }, [address, fromState]);
 
@@ -90,7 +92,7 @@ export default function Home() {
     }
 
     useEffect(() => {
-        if (!isApproving && approvalReceiptData != undefined) {
+        if (!isApproving && approvalReceiptData != undefined && !isSwitching) {
             BridgeToFaal(amount)
             toastTransactionHash(approvalReceiptData.transactionHash);
         }
@@ -196,6 +198,7 @@ export default function Home() {
                 switchChain({chainId: 43113});
                 setFromState("cChain");
                 setToState("FAAL");
+                setIsSwitching(true)
             } else if (selected === "FAAL") {
                 try {
                     await window.ethereum.request({
@@ -208,16 +211,18 @@ export default function Home() {
                                 symbol: 'USDC',
                                 decimals: 18
                             },
-                            rpcUrls: ['https://178.233.192.26:9650/ext/bc/2wfeNARjnmpRyR5HAkbFoSXdkrkXhqvM8KoBQNFHt3V9h8iZpF/rpc'], /* Replace with actual RPC URL */
-                            blockExplorerUrls: ['https://testnet.snowtrace.io/']
+                            rpcUrls: [`${process.env.NEXT_PUBLIC_RPC_URL as string}/FAAL/rpc`],
+                            blockExplorerUrls: ['https://testnet.snowtrace.io/'],
+
                         }]
-                    });
+                    },);
                 } catch (addError) {
                     console.error(addError);
                 }
                 switchChain({chainId: 9031});
                 setFromState("FAAL");
                 setToState("cChain");
+                setIsSwitching(true)
             }
         } else if (inputId === "toInput") {
             if (selected === "cChain") {
